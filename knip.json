@@ -1,0 +1,4 @@
+{
+  "entry": ["src/react.tsx", "src/core.ts", "src/config.ts", "demo/main.ts"],
+  "project": ["src/**/*.{ts,tsx}", "demo/**/*.ts", "scripts/**/*.ts"]
+}

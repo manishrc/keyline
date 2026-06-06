@@ -1,0 +1,78 @@
+{
+  "name": "keyline",
+  "version": "0.3.0",
+  "type": "module",
+  "description": "Figma-style alignment guides for the browser. Drop a data-keyline attribute on any element — see guides for it on a dev overlay.",
+  "keywords": [
+    "design",
+    "figma",
+    "alignment",
+    "grid",
+    "baseline",
+    "keylines",
+    "guides",
+    "dev-tool",
+    "react"
+  ],
+  "homepage": "https://github.com/manishrc/keyline",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manishrc/keyline.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/react.js",
+  "module": "./dist/react.js",
+  "types": "./dist/react.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js",
+      "default": "./dist/react.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js",
+      "default": "./dist/core.js"
+    },
+    "./config": {
+      "types": "./dist/config.d.ts",
+      "import": "./dist/config.js",
+      "default": "./dist/config.js"
+    }
+  },
+  "scripts": {
+    "test": "bun test",
+    "build": "bun run scripts/build.ts",
+    "build:types": "tsc -p tsconfig.build.json",
+    "dev": "vite",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "knip": "knip",
+    "prepublishOnly": "bun run typecheck && bun run lint && bun test && bun run build"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
+    "@types/bun": "^1.3.14",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  }
+}

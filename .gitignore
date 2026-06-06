@@ -1,0 +1,8 @@
+node_modules
+dist
+*.tgz
+*.log
+.DS_Store
+.vite
+local
+docs/learnings.md
