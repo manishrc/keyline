@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyline — demo</title>
+    <style>
+      :root {
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        color: #111;
+        background: #fafafa;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* GOOD: everything in 8px multiples — should sit on the baseline grid. */
+      .good h1 {
+        font-size: 32px;
+        line-height: 48px;
+        margin: 0 0 16px;
+      }
+      .good p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 24px;
+        max-width: 640px;
+      }
+
+      /* BAD: deliberately off-grid line-heights/margins to show violations. */
+      .bad h1 {
+        font-size: 30px;
+        line-height: 41px;
+        margin: 0 0 13px;
+      }
+      .bad p {
+        font-size: 15px;
+        line-height: 23px;
+        margin: 0 0 19px;
+        max-width: 640px;
+      }
+
+      section {
+        padding: 48px 0;
+        border-top: 1px solid #e5e5e5;
+      }
+      .label {
+        font:
+          12px/1.5 ui-monospace,
+          monospace;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 24px;
+      }
+      .card.bad {
+        padding: 21px 19px;
+      }
+      kbd {
+        background: #eee;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        border-radius: 4px;
+        padding: 1px 6px;
+        font:
+          12px/1 ui-monospace,
+          monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" data-keyline="content">
+      <section class="good">
+        <div class="label">On-grid (8px rhythm)</div>
+        <h1>Keyline makes the spec visible</h1>
+        <p>
+          This heading and paragraph use line-heights and margins that are exact
+          multiples of 8px. With the baseline overlay on, every line of text
+          should land cleanly on a grid row. Press <kbd>K</kbd> to toggle the
+          whole overlay, then <kbd>C</kbd> columns, <kbd>B</kbd> baseline,
+          <kbd>M</kbd> margins, <kbd>R</kbd> rulers, <kbd>?</kbd> shortcuts.
+        </p>
+        <div class="cards">
+          <div class="card">Column-aligned card</div>
+          <div class="card">Column-aligned card</div>
+          <div class="card">Column-aligned card</div>
+        </div>
+      </section>
+
+      <section class="bad">
+        <div class="label">Off-grid (deliberately broken)</div>
+        <h1>This block violates the contract</h1>
+        <p>
+          The line-heights (23px) and margins (19px) here are NOT multiples of
+          8px, and the cards below use odd padding. With the baseline overlay
+          on, you should see the text drift off the grid rows — exactly the kind
+          of misalignment the tool is meant to surface to you and to coding
+          agents.
+        </p>
+        <div class="cards">
+          <div class="card bad">Off-grid padding</div>
+          <div class="card bad">Off-grid padding</div>
+          <div class="card bad">Off-grid padding</div>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/demo/main.ts"></script>
+  </body>
+</html>
