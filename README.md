@@ -27,7 +27,7 @@ That's it. Press **K**.
 ## Install
 
 ```sh
-bun add keyline    # or npm / pnpm / yarn
+bun add @manishrc/keyline    # or npm / pnpm / yarn
 ```
 
 ## What you get on the keyboard
@@ -75,7 +75,7 @@ For most apps, this is the whole config:
 
 ```tsx
 // app/layout.tsx
-import { Keyline } from "keyline";
+import { Keyline } from "@manishrc/keyline";
 
 export default function RootLayout({ children }) {
   return (
@@ -304,7 +304,7 @@ Consumers don't import keyline. Every `<Container>` auto-contributes a guide whe
 ### Not using React
 
 ```ts
-import { mount } from "keyline/core";
+import { mount } from "@manishrc/keyline/core";
 mount({ margins: { width: 24, anchor: "content" } });
 ```
 

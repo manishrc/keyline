@@ -1,5 +1,5 @@
 {
-  "name": "keyline",
+  "name": "@manishrc/keyline",
   "version": "0.3.0",
   "type": "module",
   "description": "Figma-style alignment guides for the browser. Drop a data-keyline attribute on any element — see guides for it on a dev overlay.",
