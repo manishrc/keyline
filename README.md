@@ -1,4 +1,6 @@
 # keyline
+<img width="2400" height="1260" alt="og-light" src="https://github.com/user-attachments/assets/521b312d-5f78-46df-81a2-c2c129cc2e5d" />
+
 
 > Figma-style alignment guides for your project — directly in the browser. Committed to the repo, so the whole team designs to the same system.
 
